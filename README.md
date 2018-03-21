@@ -36,8 +36,13 @@ echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
 
 /* BUILD EVA MODULES */
 https://github.com/inomuh/evapi_modules
-
+cd ~
+git clone https://github.com/inomuh/evapi_modules.git
 sudo rpi-update
+sudo wget https://raw.githubusercontent.com/notro/rpi-source/master/rpi-source -O /usr/bin/rpi-source && sudo chmod +x /usr/bin/rpi-source && /usr/bin/rpi-source -q --tag-update
+rpi-source --skip-gcc
+cd /lib/modules/$(uname -r)/kernel/drivers/
+sudo mkdir evarobot
 
 /* BUILD EVAPI  */
 https://github.com/inomuh/evapi_ros
