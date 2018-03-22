@@ -12,10 +12,14 @@ To access to old [Indigo version of EVAPI_ROS](https://github.com/inomuh/evapi_r
 
 ### Take of SD Card
 
-***
+
+----------
+
 
 ### Configure Mikrotik Router
-***
+
+----------
+
 ## Installation
 
 ### Preparation Of Rasbian (To SD Card)
@@ -24,7 +28,9 @@ Install Lite Debian to SD card
 * [Installing](https://www.raspberrypi.org/documentation/installation/installing-images/linux.md)
 
 For use Raspberry PI 2 **headless**, create an empty file with name 'ssh' to boot directory of SD Card and turn on robot after insert SD Card to PI2.
-***
+
+----------
+
 ### Build Ros
 * [Instructions](http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Kinetic%20on%20the%20Raspberry%20Pi)
 ```bash
@@ -51,7 +57,9 @@ sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release 
 source /opt/ros/kinetic/setup.bash
 echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
 ```
-***
+
+----------
+
 ###  Build Evapi_modules
 * [Instructions](https://github.com/inomuh/evapi_modules)
 
@@ -100,7 +108,9 @@ Run that command on ```sudo nano /etc/rc.local``` and add these lines:
 	driver_sonar
 	driver_bumper
 ```
-***
+
+----------
+
 ### Build dependencies of evapi_ros
 ```bash
 cd ~
@@ -112,7 +122,7 @@ catkin_make
 source devel/setup.bash
 echo "source /home/pi/catkin_ws/devel/setup.bash" >> ~/.bashrc
 ```
-***
+
 ***Build Poco***
 ```bash
 cd /tmp
@@ -123,6 +133,7 @@ cd cmake_build
 cmake ..
 make
 sudo make install
+sudo apt-get install libtinyxml-dev
 ```
 ***Continue...***
 ```bash
@@ -136,7 +147,9 @@ git clone https://github.com/ros/common_msgs.git
 cd ~/catkin_ws
 catkin_make
 ```
-***
+
+----------
+
 ###  Build evapi_ros
 * [Instructions](https://github.com/inomuh/evapi_ros)
 
