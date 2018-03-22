@@ -81,7 +81,6 @@ echo "source /home/pi/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
 cd ~/catkin_ws/src
 git clone https://github.com/ros/diagnostics.git
-git clone https://github.com/ros/diagnostics.git
 git clone https://github.com/ros/dynamic_reconfigure.git
 git clone https://github.com/inomuh/im_msgs.git 
 git clone https://github.com/ros/common_msgs.git
