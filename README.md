@@ -1,7 +1,11 @@
 # EvaRobot-Kinetic
 
+## Prerequisites
+
+### PREAPATION OF RASBIAN 
 install base debian to sd card
-https://www.raspberrypi.org/documentation/installation/installing-images/linux.md
+[download](https://www.raspberrypi.org/downloads/raspbian/) - Select lite version
+[installing](https://www.raspberrypi.org/documentation/installation/installing-images/linux.md)
 
 for use raspberry pi headless create empty ssh file to boot directory of raspberry pi
 
