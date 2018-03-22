@@ -144,7 +144,7 @@ make
 sudo make install
 sudo apt-get install libtinyxml-dev
 ```
-***Continue... Be carefull about the compilation order.***
+***Continue and be careful about the compilation order.***
 ```bash
 cd ~/catkin_ws/src
 git clone https://github.com/ros/bond_core.git
@@ -178,7 +178,7 @@ catkin_make
 
 * **Ahmet AK** - *Initial work* - [inomuh](https://github.com/inomuh)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+This documentation was written upon the request of ***[Berke GÜR, Ph.D.](http://berkegur.com/) @ [Bahçeşehir University Robotic Lab.]()***
 
 ## License
 
