@@ -1,5 +1,7 @@
 # EvaRobot-Kinetic
-
+	Kinetic upgradation of evapi_ros Packages (ROBOT Side Packages)
+	[Indigo version of evapi_ros](https://github.com/inomuh/evapi_ros)
+	
 ## Prerequisites
 
 ### PREAPATION OF RASBIAN 
