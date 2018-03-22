@@ -72,7 +72,7 @@ git clone https://github.com/inomuh/evapi_modules.git
 **Apply Patches**
 
 ```bash
-wget evapi_modules.patch
+wget https://raw.githubusercontent.com/akahmet/EvaRobot-Kinetic/master/evapi_modules.patch
 patch -p0 -R < evapi_modules.patch
 ```
 
@@ -176,16 +176,15 @@ catkin_make
 
 ## Authors
 
-* **Ahmet AK** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Ahmet AK** - *Initial work* - [inomuh](https://github.com/inomuh)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This documentation is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* [Eva Robot](https://github.com/inomuh)
+* Raspberry pi 2
