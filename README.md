@@ -3,15 +3,16 @@
 ## Prerequisites
 
 ### PREAPATION OF RASBIAN 
-install base debian to sd card
+Install base debian to sd card
 * [Download](https://www.raspberrypi.org/downloads/raspbian/) - Select lite version
 * [Installing](https://www.raspberrypi.org/documentation/installation/installing-images/linux.md)
 
 for use raspberry pi headless create empty ssh file to boot directory of raspberry pi
 
-after of this build ros from source
-http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Kinetic%20on%20the%20Raspberry%20Pi
-/* BUILD ROS */
+after this build ros from source
+### BUILD ROS
+* [Instructions](http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Kinetic%20on%20the%20Raspberry%20Pi)
+```
 sudo apt-get update
 sudo apt-get install -y python-rosdep python-rosinstall-generator python-wstool python-rosinstall build-essential cmake
 sudo rosdep init
@@ -34,7 +35,7 @@ rosdep install --from-paths src --ignore-src --rosdistro kinetic -y
 sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --install-space /opt/ros/kinetic -j2
 source /opt/ros/kinetic/setup.bash
 echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
-
+```
 
 /* BUILD EVA MODULES */
 https://github.com/inomuh/evapi_modules
@@ -82,8 +83,17 @@ cd ~/catkin_ws
 catkin_make
 source devel/setup.bash
 echo "source /home/pi/catkin_ws/devel/setup.bash" >> ~/.bashrc
-
+cd /tmp
+git clone https://github.com/pocoproject/poco.git
+cd /tmp/poco
+mkdir cmake_build
+cd cmake_build
+cmake ..
+make
+sudo make install
 cd ~/catkin_ws/src
+git clone https://github.com/ros/class_loader.git
+git clone https://github.com/ros/pluginlib.git
 git clone https://github.com/ros/diagnostics.git
 git clone https://github.com/ros/dynamic_reconfigure.git
 git clone https://github.com/inomuh/im_msgs.git 
