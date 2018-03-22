@@ -176,9 +176,10 @@ catkin_make
 
 ## Authors
 
-* **Ahmet AK** - *Initial work* - [inomuh](https://github.com/inomuh)
-
-This documentation was written upon the request of ***[Berke GÜR, Ph.D.](http://berkegur.com/) @ [Bahçeşehir University Robotic Lab.]()***
+* **[Ahmet AK](https://github.com/akahmet)**
+* *Initial work* - [inomuh](https://github.com/inomuh)
+	
+This documentation was written upon the request of ***[Berke GÜR, Ph.D.](http://berkegur.com/) @ [Bahçeşehir University Robotic Lab.](http://robotics.bahcesehir.edu.tr/)***
 
 ## License
 
