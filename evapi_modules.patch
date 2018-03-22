@@ -1,0 +1,36 @@
+diff -ruN evapi_modules/module_bumper/driver_bumper.h evapi_modules2/module_bumper/driver_bumper.h
+--- evapi_modules/module_bumper/driver_bumper.h	2018-03-22 18:26:47.000000000 +0300
++++ evapi_modules2/module_bumper/driver_bumper.h	2018-03-22 18:22:49.000000000 +0300
+@@ -8,7 +8,7 @@
+ #include <linux/fs.h>
+ #include <linux/cdev.h>
+ #include <linux/semaphore.h>
+-#include <asm/uaccess.h>
++#include <linux/uaccess.h>
+ 
+ #include <linux/ioctl.h>
+ 
+diff -ruN evapi_modules/module_encoder/driver_encoder.c evapi_modules2/module_encoder/driver_encoder.c
+--- evapi_modules/module_encoder/driver_encoder.c	2018-03-22 18:26:47.000000000 +0300
++++ evapi_modules2/module_encoder/driver_encoder.c	2018-03-21 18:52:09.000000000 +0300
+@@ -8,7 +8,7 @@
+ #include <linux/fs.h>
+ #include <linux/cdev.h>
+ #include <linux/semaphore.h>
+-#include <asm/uaccess.h>
++#include <linux/uaccess.h>
+  
+  
+ #define DRIVER_AUTHOR "Mehmet Akcakoca <mehmet.akcakoca@inovasyonmuhendislik.com>"
+diff -ruN evapi_modules/module_sonar/driver_sonar.h evapi_modules2/module_sonar/driver_sonar.h
+--- evapi_modules/module_sonar/driver_sonar.h	2018-03-22 18:26:47.000000000 +0300
++++ evapi_modules2/module_sonar/driver_sonar.h	2018-03-21 18:47:58.000000000 +0300
+@@ -8,7 +8,7 @@
+ #include <linux/fs.h>
+ #include <linux/cdev.h>
+ #include <linux/semaphore.h>
+-#include <asm/uaccess.h>
++#include <linux/uaccess.h>
+ 
+ #include <linux/ioctl.h>
+ 

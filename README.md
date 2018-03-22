@@ -68,7 +68,16 @@ However offical version of evapi_modules **need patch** due to new kernel of lin
 cd ~
 git clone https://github.com/inomuh/evapi_modules.git
 ```
+
 **Apply Patches**
+
+```bash
+wget evapi_modules.patch
+patch -p0 -R < evapi_modules.patch
+```
+
+***Continue...***
+
 ```bash
 sudo rpi-update
 sudo wget https://raw.githubusercontent.com/notro/rpi-source/master/rpi-source -O /usr/bin/rpi-source
@@ -135,15 +144,20 @@ make
 sudo make install
 sudo apt-get install libtinyxml-dev
 ```
-***Continue...***
+***Continue... Be carefull about the compilation order.***
 ```bash
 cd ~/catkin_ws/src
+git clone https://github.com/ros/bond_core.git
 git clone https://github.com/ros/class_loader.git
 git clone https://github.com/ros/pluginlib.git
-git clone https://github.com/ros/diagnostics.git
-git clone https://github.com/ros/dynamic_reconfigure.git
-git clone https://github.com/inomuh/im_msgs.git 
 git clone https://github.com/ros/common_msgs.git
+git clone https://github.com/ros-controls/realtime_tools.git
+git clone https://github.com/inomuh/im_msgs.git 
+cd ~/catkin_ws
+catkin_make
+cd ~/catkin_ws/src
+git clone https://github.com/ros/dynamic_reconfigure.git
+git clone https://github.com/ros/diagnostics.git	
 cd ~/catkin_ws
 catkin_make
 ```
@@ -159,3 +173,19 @@ git clone https://github.com/inomuh/evapi_ros.git
 cd ~/catkin_ws
 catkin_make
 ```
+
+## Authors
+
+* **Ahmet AK** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* Hat tip to anyone who's code was used
+* Inspiration
+* etc
