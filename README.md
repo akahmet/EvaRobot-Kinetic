@@ -142,7 +142,7 @@ cd cmake_build
 cmake ..
 make
 sudo make install
-sudo apt-get install libtinyxml-dev
+sudo apt-get install libtinyxml-dev libusb-1.0-0-dev
 ```
 ***Continue and be careful about the compilation order.***
 ```bash
@@ -176,10 +176,10 @@ catkin_make
 
 ## Authors
 
-* **[Ahmet AK](https://github.com/akahmet)**
+* [Ahmet AK](https://github.com/akahmet)
 * *Initial work* - [inomuh](https://github.com/inomuh)
 	
-This documentation was written upon the request of ***[Berke GÜR, Ph.D.](http://berkegur.com/) @ [Bahçeşehir University Robotic Lab.](http://robotics.bahcesehir.edu.tr/)***
+This documentation was written upon the request of [Berke GÜR, Ph.D.](http://berkegur.com/) @ ***[Bahçeşehir University Robotic Lab.](http://robotics.bahcesehir.edu.tr/)***
 
 ## License
 
