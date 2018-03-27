@@ -145,6 +145,7 @@ sudo make install
 sudo apt-get install libtinyxml-dev libusb-1.0-0-dev
 ```
 ***Continue and be careful about the compilation order.***
+**NOT: DO NOT USE -J4 it cause to memory allocation error on raspberry pi**
 ```bash
 cd ~/catkin_ws/src
 git clone https://github.com/ros/bond_core.git
@@ -154,12 +155,12 @@ git clone https://github.com/ros/common_msgs.git
 git clone https://github.com/ros-controls/realtime_tools.git
 git clone https://github.com/inomuh/im_msgs.git 
 cd ~/catkin_ws
-catkin_make
+catkin_make -j2
 cd ~/catkin_ws/src
 git clone https://github.com/ros/dynamic_reconfigure.git
 git clone https://github.com/ros/diagnostics.git	
 cd ~/catkin_ws
-catkin_make
+catkin_make -j2
 ```
 
 ----------
@@ -171,7 +172,11 @@ catkin_make
 cd ~/catkin_ws/src
 git clone https://github.com/inomuh/evapi_ros.git
 cd ~/catkin_ws
-catkin_make
+mv /home/pi/catkin_ws/src/evapi_ros/evarobot_android /home/pi/evarobot_android
+catkin_make -j2
+mv /home/pi/evarobot_android /home/pi/catkin_ws/src/evapi_ros/evarobot_android
+$ make patch in here
+catkin_make -j2
 ```
 
 ## Authors
@@ -188,4 +193,4 @@ This documentation is licensed under the MIT License - see the [LICENSE.md](LICE
 ## Acknowledgments
 
 * [Eva Robot](https://github.com/inomuh)
-* Raspberry pi 2
+* Raspberry PI 2
