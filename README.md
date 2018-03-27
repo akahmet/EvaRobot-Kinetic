@@ -16,7 +16,18 @@ To access to old [Indigo version of EVAPI_ROS](https://github.com/inomuh/evapi_r
 ----------
 
 
-### Configure Mikrotik Router
+### Configure Mikrotik Router For Net Connection to update packages
+Go to http://192.168.10.1/ (IP OF MIKROTIK) on your browser.
+From "Ports" section inside of the "Bridge" remove ether3. (This will separete the ether3 from lan bridge).
+Add new interface to "Dhcp client" inside of "IP" (click to add new select ether3 as interface).
+Enter 8.8.8.8 as dns servers in "DNS" from "IP".
+
+if you are in mac rescricted network as BAU, you need to clone mac address from a computer of school.
+For this one open "new terminal", **modify** and run this code
+
+```
+interface ethernet set ether3 mac-address=AA:BB:CC:DD:EE:00
+```
 
 ----------
 
@@ -167,7 +178,6 @@ catkin_make -j2
 
 ###  Build evapi_ros
 * [Instructions](https://github.com/inomuh/evapi_ros)
-
 ```bash
 cd ~/catkin_ws/src
 git clone https://github.com/inomuh/evapi_ros.git
