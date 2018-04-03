@@ -8,7 +8,10 @@ Personally, I recommend you to run commands one by one, thanks to thats way you 
 if you prefer to use prepared image of SD Card, contact with me.
 
 To access to old [Indigo version of EVAPI_ROS](https://github.com/inomuh/evapi_ros)
+
 ## Preparation
+
+	**After booting DO NOT FORGET to WXPAND SD Card, ENABLE I2C AND SPI interfaces from raspi-config** 
 
 ### Take of SD Card
 
@@ -24,11 +27,10 @@ Enter 8.8.8.8 as dns servers in "DNS" from "IP".
 
 if you are in mac rescricted network as BAU, you need to clone mac address from a computer of school.
 For this one open "new terminal", **modify** and run this code
-
-```
+**Warning: that code can cause break the law or regulations in your country or building **
+```bash
 interface ethernet set ether3 mac-address=AA:BB:CC:DD:EE:00
 ```
-
 ----------
 
 ## Installation
@@ -67,6 +69,7 @@ rosdep install --from-paths src --ignore-src --rosdistro kinetic -y
 sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --install-space /opt/ros/kinetic -j2
 source /opt/ros/kinetic/setup.bash
 echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+sudo rosdep init
 ```
 
 ----------
@@ -132,7 +135,9 @@ Run that command on ```sudo nano /etc/rc.local``` and add these lines:
 ----------
 
 ### Build dependencies of evapi_ros
+
 ```bash
+sudo apt-get install libtinyxml-dev libusb-1.0-0-dev python-scipy
 cd ~
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src 
@@ -153,7 +158,6 @@ cd cmake_build
 cmake ..
 make
 sudo make install
-sudo apt-get install libtinyxml-dev libusb-1.0-0-dev
 ```
 ***Continue and be careful about the compilation order.***
 **NOT: DO NOT USE -J4 it cause to memory allocation error on raspberry pi**
@@ -164,7 +168,7 @@ git clone https://github.com/ros/class_loader.git
 git clone https://github.com/ros/pluginlib.git
 git clone https://github.com/ros/common_msgs.git
 git clone https://github.com/ros-controls/realtime_tools.git
-git clone https://github.com/inomuh/im_msgs.git 
+git clone https://github.com/inomuh/im_msgs.git
 cd ~/catkin_ws
 catkin_make -j2
 cd ~/catkin_ws/src
@@ -188,6 +192,35 @@ mv /home/pi/evarobot_android /home/pi/catkin_ws/src/evapi_ros/evarobot_android
 $ make patch in here
 catkin_make -j2
 ```
+
+----------
+
+###  Configure Enviroment
+**WARNING: This code run the motors be carefull before run. That can cause the injuries**
+```bash
+roslaunch evarobot_start imu_calibration.launch
+```
+
+###  Test
+```bash
+i2cdetect -y 1
+```
+Result Should be for i2c devices
+```
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- 1d -- -- 
+20: 20 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+60: -- -- -- -- 64 -- -- -- -- -- -- 6b -- -- -- -- 
+```
+
+you can also build evapi_modules test codes to test them
+~/evapi_modules/module_sonar/test.c and do not forget to run them as sudoer
+
+----------
 
 ## Authors
 
