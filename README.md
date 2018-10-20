@@ -178,6 +178,10 @@ cd ~/catkin_ws
 catkin_make -j2
 ```
 
+do not forget to add 
+set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS}")
+to class_loader
+
 ----------
 
 ###  Build evapi_ros
